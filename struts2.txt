@@ -1,0 +1,31 @@
+struts2分模块开发：
+其实就是把struts.xml文件，里面include其他的xml文件，让一个模块可以用一个xml文件。
+
+Action编写的三种方式：
+1、创建普通类，不继承任何类，不实现任何接口
+2、创建类，实现接口Action  (com.opensymphony.xwork2这个包里的)
+3、创建类，继承类ActionSupport  (com.opensymphony.xwork2这个包里的)
+
+访问Action的方法：
+1、使用Action标签的method属性，在这个属性里面写执行的action方法。
+    <package name="demo2" extends="struts-default" namespace="/v2">
+        <action name="user" class="cn.jhsoft.study.struts2.UserAction">
+            <result name="success" type="">/list.jsp</result>
+        </action>
+        <action name="add" class="cn.jhsoft.study.struts2.UserAction" method="add">
+        </action>
+    </package>
+
+2、使用通配符方式实现
+    *表示匹配任意内容
+    比如访问 hello,*可以匹配到
+    <!--通配符方式实现-->
+    <package name="demo3" extends="struts-default" namespace="/user">
+        <!--name属性值里面写符号 *
+        执行action里的add方法，访问user_add，用user_*访问，则相当于 * 就是 add，用{1}来得到这个*的值
+        -->
+        <action name="user_*" class="cn.jhsoft.study.struts2.UserAction" method="{1}"></action>
+    </package>
+
+3、动态访问实现（不用）
+

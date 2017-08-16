@@ -4,9 +4,11 @@
   <groupId>cn.jhsoft</groupId>
   <artifactId>ssh</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>ssh</version>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- spring版本号 -->
     <spring.version>4.2.5.RELEASE</spring.version>
     <!-- mybatis版本号 -->
@@ -167,46 +169,47 @@
 
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-          <archive>
-            <manifest>
-              <mainClass>cn.jhsoft.bigdata.storm.wordcount.WordCountTopologMain</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-    </plugins>
-    <resources>
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.xml</include>
-        </includes>
-      </resource>
-    </resources>
+    <!--<plugins>-->
+      <!--<plugin>-->
+        <!--<artifactId>maven-assembly-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<descriptorRefs>-->
+            <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+          <!--</descriptorRefs>-->
+          <!--<archive>-->
+            <!--<manifest>-->
+              <!--<mainClass>cn.jhsoft.bigdata.storm.wordcount.WordCountTopologMain</mainClass>-->
+            <!--</manifest>-->
+          <!--</archive>-->
+        <!--</configuration>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>make-assembly</id>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+              <!--<goal>single</goal>-->
+            <!--</goals>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<source>1.7</source>-->
+          <!--<target>1.7</target>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+    <finalName>ssh</finalName>
+    <!--<resources>-->
+      <!--<resource>-->
+        <!--<directory>src/main/java</directory>-->
+        <!--<includes>-->
+          <!--<include>**/*.xml</include>-->
+        <!--</includes>-->
+      <!--</resource>-->
+    <!--</resources>-->
   </build>
 
 

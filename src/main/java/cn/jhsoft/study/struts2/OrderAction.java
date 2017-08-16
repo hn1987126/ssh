@@ -9,6 +9,7 @@ public class OrderAction extends ActionSupport {
     @Override
     public String execute() throws Exception {
         System.out.println("here");
+        // 代表没有返回值
         return NONE;
     }
 }
