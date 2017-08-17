@@ -4,6 +4,7 @@
 <struts>
     <!--name这个是指类似给这里面的Action归个类，extends里面的struts-default是固定值，namespace是访问路径，它和action标签里的name共同构成访问路径，可以不写，默认就是"/"-->
     <package name="demo1" extends="struts-default" namespace="/">
+
         <!--<action name="orderAction" class="cn.jhsoft.study.struts2.OrderAction"/>-->
 
         <!--如果用spring整合，那class里不就用写全路径了，不然会创建两次，spring里创建一次，struts2里再创建一次，
@@ -13,6 +14,14 @@
             <!--配置方法的返回值转到页面，里面有个 type属性，默认是转发(转发是只请求一次，地址不变),还有重定向-->
             <result name="ok">/list.jsp</result>
         </action>
+
+    </package>
+
+    <package name="demo3" extends="struts-default" namespace="/">
+        <action name="form1" class="cn.jhsoft.study.struts2.form.Form1DemoAction"/>
+        <action name="form2" class="cn.jhsoft.study.struts2.form.Form2DemoAction"/>
+        <action name="form3" class="cn.jhsoft.study.struts2.form.Form3DemoAction"/>
+        <action name="form4" class="cn.jhsoft.study.struts2.form.Form4DemoAction"/>
     </package>
 
     <!--修改struts2中的默认常量值，还可以在src下面创建struts.properties文件来配置，或者在web.xml中配置-->
@@ -20,4 +29,6 @@
 
     <!--引入其他struts模块的配置文件-->
     <include file="struts_user.xml"/>
+
+
 </struts>

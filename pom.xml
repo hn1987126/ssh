@@ -133,6 +133,18 @@
       <artifactId>struts2-spring-plugin</artifactId>
       <version>${struts2.version}</version>
     </dependency>
+    <!-- 添加jstl依赖 -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!--ognl-->
+    <dependency>
+      <groupId>ognl</groupId>
+      <artifactId>ognl</artifactId>
+      <version>3.0.6</version>
+    </dependency>
 
     <!-- 添加日志相关jar包 -->
     <dependency>

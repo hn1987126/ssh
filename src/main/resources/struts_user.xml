@@ -13,12 +13,19 @@
     <!--</package>-->
 
     <!--通配符方式实现-->
-    <package name="demo3" extends="struts-default" namespace="/user">
+    <package name="demo2" extends="struts-default" namespace="/user">
+
+        <!--全局结果页面配置-->
+        <global-results>
+            <result name="list">/list.jsp</result>
+        </global-results>
+
         <!--name属性值里面写符号 *
         执行action里的add方法，访问user_add，用user_*访问，则相当于 * 就是 add，用{1}来得到这个*的值
         -->
         <action name="user_*" class="cn.jhsoft.study.struts2.UserAction" method="{1}">
-            <result name="list">/list.jsp</result>
+            <!--已使用全局的result-->
+            <result name="list">/ognl.jsp</result>
         </action>
     </package>
 
