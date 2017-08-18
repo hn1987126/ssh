@@ -73,7 +73,7 @@ public class UserAction implements Action {
 
 
         HttpServletRequest request = ServletActionContext.getRequest();
-        request.setAttribute("name", "cjh");
+        request.setAttribute("hahaname", "cjh");
         return "list";
     }
 }

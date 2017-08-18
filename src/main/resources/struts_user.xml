@@ -15,6 +15,11 @@
     <!--通配符方式实现-->
     <package name="demo2" extends="struts-default" namespace="/user">
 
+        <!--声明拦截器-->
+        <interceptors>
+            <interceptor name="loginInterceptor" class="cn.jhsoft.study.struts2.inter.LoginInterceptor"></interceptor>
+        </interceptors>
+
         <!--全局结果页面配置-->
         <global-results>
             <result name="list">/list.jsp</result>
@@ -26,6 +31,16 @@
         <action name="user_*" class="cn.jhsoft.study.struts2.UserAction" method="{1}">
             <!--已使用全局的result-->
             <result name="list">/ognl.jsp</result>
+
+            <!--使用拦截器-->
+            <interceptor-ref name="loginInterceptor">
+                <!--某些方法不拦截，name属性值：excludeMethods
+                值是 action里不拦截的方法名称，多个方法用逗号隔开。-->
+                <param name="excludeMethods">list,add</param>
+            </interceptor-ref>
+
+            <!--把默认拦截器手工再使用一次-->
+            <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
     </package>
 

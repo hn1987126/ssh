@@ -18,6 +18,7 @@
     </package>
 
     <package name="demo3" extends="struts-default" namespace="/">
+
         <action name="form1" class="cn.jhsoft.study.struts2.form.Form1DemoAction"/>
         <action name="form2" class="cn.jhsoft.study.struts2.form.Form2DemoAction"/>
         <action name="form3" class="cn.jhsoft.study.struts2.form.Form3DemoAction"/>
