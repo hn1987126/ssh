@@ -19,7 +19,7 @@ public class LoginInterceptor extends MethodFilterInterceptor {
             return actionInvocation.invoke();
         }else{
             // 在result标签里找到名称是login的值，到配置路径里面
-            return "list";
+            return "login";
         }
     }
 
