@@ -388,10 +388,29 @@ public class LoginInterceptor extends MethodFilterInterceptor {
 <s:if   <s:elseif
 
 表单标签：
-<s:form
-<s:textfield
-
-
+<s:form >
+    <%--文本框--%>
+    <s:textfield name="n" label="姓名"></s:textfield>
+    <%--密码--%>
+    <s:password name="p" label="密码"></s:password>
+    <%--单选输入项--%>
+    <s:radio list="{'女','男'}" name="sex" label="性别"></s:radio>
+    <s:radio list="#{'nv':'女','nan':'男'}" name="sex" label="性别"></s:radio>
+    <%--复选输入框--%>
+    <s:checkboxlist list="{'女','男'}" name="sex" label="性别"></s:checkboxlist>
+    <%--下拉列表--%>
+    <s:select list="{'女','男'}" name="sex" label="性别"></s:select>
+    <%--上传--%>
+    <s:file name="file" label="上传附件"></s:file>
+    <%--隐藏域--%>
+    <s:hidden name="hid" value="abcd"></s:hidden>
+    <%--文本域--%>
+    <s:textarea rows="10" cols="20" name="resume" label="文本域"></s:textarea>
+    <%--提交按钮--%>
+    <s:submit value="提交"></s:submit>
+    <%--重置按钮--%>
+    <s:reset value="重置"></s:reset>
+</s:form>
 
 
 
